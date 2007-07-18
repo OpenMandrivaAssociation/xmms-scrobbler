@@ -1,21 +1,20 @@
 %define name xmms-scrobbler
-%define version 0.3.8.1
-%define release %mkrel 8
+%define version 0.4.0
+%define release %mkrel 1
 
 Summary:	A xmms plugin that builds a profile of your musical taste
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-#Source0:	http://static.audioscrobbler.com/plugins/%{name}-%{version}.tar.bz2
-Source0: http://www.pipian.com/stuffforchat/%{name}-%{version}.tar.bz2
-Patch: http://archive.ubuntu.com/ubuntu/pool/universe/x/xmms-scrobbler/xmms-scrobbler_0.3.8.1-4build1.diff
+Source0: http://xmms-scrobbler.sommitrealweird.co.uk/download/%{name}-%{version}.tar.bz2
 License:	GPL
 Group:		Sound
-Url:		http://www.audioscrobbler.com/
+Url:		http://xmms-scrobbler.sommitrealweird.co.uk/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	musicbrainz-devel
 BuildRequires:	curl-devel
 BuildRequires:	xmms-devel
+BuildRequires:	taglib-devel
 
 %description
 Audioscrobbler builds a profile of your musical taste using a plugin
@@ -29,9 +28,6 @@ recommendations.
 
 %prep
 %setup -q
-aclocal
-autoconf
-automake
 
 %build
 %configure2_5x --disable-bmp-plugin
