@@ -10,6 +10,7 @@ Source0: http://xmms-scrobbler.sommitrealweird.co.uk/download/%{name}-%{version}
 License:	GPL
 Group:		Sound
 Url:		http://xmms-scrobbler.sommitrealweird.co.uk/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	musicbrainz-devel
 BuildRequires:	curl-devel
 BuildRequires:	xmms-devel
