@@ -1,13 +1,13 @@
 %define name xmms-scrobbler
 %define version 0.4.0
-%define release %mkrel 4
+%define release %mkrel 2
 
 Summary:	A xmms plugin that builds a profile of your musical taste
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Source0: http://xmms-scrobbler.sommitrealweird.co.uk/download/%{name}-%{version}.tar.bz2
-License:	GPL
+License:	LGPLv2+
 Group:		Sound
 Url:		http://xmms-scrobbler.sommitrealweird.co.uk/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -30,6 +30,7 @@ recommendations.
 %setup -q
 
 %build
+%define _disable_ld_no_undefined 1
 %configure2_5x --disable-bmp-plugin
 %make
 
